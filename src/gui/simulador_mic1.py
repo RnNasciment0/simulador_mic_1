@@ -7,6 +7,7 @@ from src.alu import ALU
 # Variável de estado para rastrear se a ação foi realizada
 acao_realizada = False
 
+
 # Função para alternar entre fazer e desfazer a ação
 def alternar_acao():
     global acao_realizada
@@ -16,24 +17,29 @@ def alternar_acao():
         fazer_acao()
     acao_realizada = not acao_realizada
 
+
 # Função para fazer a ação
 def fazer_acao():
     registradores_label.config(text="Ação realizada")
 
+
 # Função para desfazer a ação
 def desfazer_acao():
     registradores_label.config(text="Ação desfeita")
+
 
 # Função para exibir o conteúdo dos registradores
 def exibir_registradores():
     texto = "\n".join(str(reg) for reg in registradores)
     registradores_label.config(text=texto)
 
+
 # Função para exibir o conteúdo da memória
 def exibir_memoria():
     texto = str(memoria)
     memoria_text.delete(1.0, tk.END)
     memoria_text.insert(tk.END, texto)
+
 
 # Função para realizar uma operação na ALU
 def operar_alu():
@@ -43,6 +49,7 @@ def operar_alu():
     resultado = alu.operar(operacao, operando1, operando2)
     resultado_label.config(text=f"Resultado: {resultado}")
 
+
 # Função para ler um valor da memória
 def ler_memoria():
     endereco = int(memoria_endereco_entry.get())
@@ -50,12 +57,14 @@ def ler_memoria():
     memoria_valor_entry.delete(0, tk.END)
     memoria_valor_entry.insert(0, str(valor))
 
+
 # Função para escrever um valor na memória
 def escrever_memoria():
     endereco = int(memoria_endereco_entry.get())
     valor = int(memoria_valor_entry.get())
     memoria.escrever(endereco, valor)
     exibir_memoria()
+
 
 # Função para ler um valor de um registrador
 def ler_registrador():
@@ -66,6 +75,7 @@ def ler_registrador():
             registrador_valor_entry.insert(0, str(reg.ler()))
             break
 
+
 # Função para escrever um valor em um registrador
 def escrever_registrador():
     nome = registrador_nome_entry.get()
@@ -75,6 +85,7 @@ def escrever_registrador():
             reg.escrever(valor)
             exibir_registradores()  # Atualiza a exibição dos registradores
             break
+
 
 # Cria a janela principal
 root = tk.Tk()
