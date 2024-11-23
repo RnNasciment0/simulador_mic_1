@@ -1,17 +1,17 @@
 class Registrador:
     def __init__(self, nome, tamanho_em_bits):
-        self.nome = nome
-        self.valor = 0  # Inicializa com valor zero
-        self.tamanho = tamanho_em_bits
+        self.nome = nome  # Define o nome do registrador
+        self.valor = 0  # Inicializa o valor do registrador com zero
+        self.tamanho = tamanho_em_bits  # Define o tamanho do registrador em bits
 
     def ler(self):
-        return self.valor
+        return self.valor  # Retorna o valor atual do registrador
 
     def escrever(self, novo_valor):
-        self.valor = novo_valor
+        self.valor = novo_valor  # Atualiza o valor do registrador com o novo valor
 
     def __str__(self):
-        return f"Registrador {self.nome}: {self.valor}"
+        return f"Registrador {self.nome}: {self.valor}"  # Retorna uma string representando o registrador e seu valor
 
 
 # Instanciando os registradores
