@@ -33,14 +33,9 @@ e = Registrador("E", 16)  # Registrador de uso geral E
 f = Registrador("F", 16)  # Registrador de uso geral F
 mar = Registrador("MAR", 16)  # Registrador de Endereço de Memória
 mbr = Registrador("MBR", 16)  # Registrador de Buffer de Memória
-latch_a = Registrador("Latch A", 16)  # Latch A
-latch_b = Registrador("Latch B", 16)  # Latch B
-amux = Registrador("AMUX", 16)  # Multiplexador
-ula = Registrador("ULA", 16)  # Unidade Lógica Aritmética
-deslocador = Registrador("Deslocador", 16)  # Deslocador
 
 # Lista de todos os registradores para fácil acesso
 registradores = [
     pc, ac, sp, ir, tir, r0, r_plus1, r_minus1, sm, am,
-    a, b, c, d, e, f, mar, mbr, latch_a, latch_b, amux, ula, deslocador
+    a, b, c, d, e, f, mar, mbr
 ]
